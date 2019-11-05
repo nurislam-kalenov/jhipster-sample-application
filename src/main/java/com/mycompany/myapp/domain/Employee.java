@@ -53,6 +53,9 @@ public class Employee implements Serializable {
     @Column(name = "commission_pct")
     private Long commissionPct;
 
+    @Column(name = "is_norm")
+    private Boolean isNorm;
+
     @ManyToOne
     @JsonIgnoreProperties("employees")
     private Department department;
@@ -165,6 +168,19 @@ public class Employee implements Serializable {
         this.commissionPct = commissionPct;
     }
 
+    public Boolean isIsNorm() {
+        return isNorm;
+    }
+
+    public Employee isNorm(Boolean isNorm) {
+        this.isNorm = isNorm;
+        return this;
+    }
+
+    public void setIsNorm(Boolean isNorm) {
+        this.isNorm = isNorm;
+    }
+
     public Department getDepartment() {
         return department;
     }
@@ -244,6 +260,7 @@ public class Employee implements Serializable {
             ", hireDate='" + getHireDate() + "'" +
             ", salary=" + getSalary() +
             ", commissionPct=" + getCommissionPct() +
+            ", isNorm='" + isIsNorm() + "'" +
             "}";
     }
 }
