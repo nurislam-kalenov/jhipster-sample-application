@@ -56,6 +56,9 @@ public class EmployeeResourceIT {
     private static final Long DEFAULT_COMMISSION_PCT = 1L;
     private static final Long UPDATED_COMMISSION_PCT = 2L;
 
+    private static final Boolean DEFAULT_IS_NORM = false;
+    private static final Boolean UPDATED_IS_NORM = true;
+
     @Autowired
     private EmployeeRepository employeeRepository;
 
@@ -104,7 +107,8 @@ public class EmployeeResourceIT {
             .phoneNumber(DEFAULT_PHONE_NUMBER)
             .hireDate(DEFAULT_HIRE_DATE)
             .salary(DEFAULT_SALARY)
-            .commissionPct(DEFAULT_COMMISSION_PCT);
+            .commissionPct(DEFAULT_COMMISSION_PCT)
+            .isNorm(DEFAULT_IS_NORM);
         return employee;
     }
     /**
@@ -121,7 +125,8 @@ public class EmployeeResourceIT {
             .phoneNumber(UPDATED_PHONE_NUMBER)
             .hireDate(UPDATED_HIRE_DATE)
             .salary(UPDATED_SALARY)
-            .commissionPct(UPDATED_COMMISSION_PCT);
+            .commissionPct(UPDATED_COMMISSION_PCT)
+            .isNorm(UPDATED_IS_NORM);
         return employee;
     }
 
@@ -152,6 +157,7 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getHireDate()).isEqualTo(DEFAULT_HIRE_DATE);
         assertThat(testEmployee.getSalary()).isEqualTo(DEFAULT_SALARY);
         assertThat(testEmployee.getCommissionPct()).isEqualTo(DEFAULT_COMMISSION_PCT);
+        assertThat(testEmployee.isIsNorm()).isEqualTo(DEFAULT_IS_NORM);
     }
 
     @Test
@@ -191,7 +197,8 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].phoneNumber").value(hasItem(DEFAULT_PHONE_NUMBER)))
             .andExpect(jsonPath("$.[*].hireDate").value(hasItem(DEFAULT_HIRE_DATE.toString())))
             .andExpect(jsonPath("$.[*].salary").value(hasItem(DEFAULT_SALARY.intValue())))
-            .andExpect(jsonPath("$.[*].commissionPct").value(hasItem(DEFAULT_COMMISSION_PCT.intValue())));
+            .andExpect(jsonPath("$.[*].commissionPct").value(hasItem(DEFAULT_COMMISSION_PCT.intValue())))
+            .andExpect(jsonPath("$.[*].isNorm").value(hasItem(DEFAULT_IS_NORM.booleanValue())));
     }
     
     @Test
@@ -211,7 +218,8 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.phoneNumber").value(DEFAULT_PHONE_NUMBER))
             .andExpect(jsonPath("$.hireDate").value(DEFAULT_HIRE_DATE.toString()))
             .andExpect(jsonPath("$.salary").value(DEFAULT_SALARY.intValue()))
-            .andExpect(jsonPath("$.commissionPct").value(DEFAULT_COMMISSION_PCT.intValue()));
+            .andExpect(jsonPath("$.commissionPct").value(DEFAULT_COMMISSION_PCT.intValue()))
+            .andExpect(jsonPath("$.isNorm").value(DEFAULT_IS_NORM.booleanValue()));
     }
 
     @Test
@@ -241,7 +249,8 @@ public class EmployeeResourceIT {
             .phoneNumber(UPDATED_PHONE_NUMBER)
             .hireDate(UPDATED_HIRE_DATE)
             .salary(UPDATED_SALARY)
-            .commissionPct(UPDATED_COMMISSION_PCT);
+            .commissionPct(UPDATED_COMMISSION_PCT)
+            .isNorm(UPDATED_IS_NORM);
 
         restEmployeeMockMvc.perform(put("/api/employees")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -259,6 +268,7 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getHireDate()).isEqualTo(UPDATED_HIRE_DATE);
         assertThat(testEmployee.getSalary()).isEqualTo(UPDATED_SALARY);
         assertThat(testEmployee.getCommissionPct()).isEqualTo(UPDATED_COMMISSION_PCT);
+        assertThat(testEmployee.isIsNorm()).isEqualTo(UPDATED_IS_NORM);
     }
 
     @Test

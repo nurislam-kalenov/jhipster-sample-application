@@ -29,6 +29,10 @@
         {
             "fieldName": "commissionPct",
             "fieldType": "Long"
+        },
+        {
+            "fieldName": "isNorm",
+            "fieldType": "Boolean"
         }
     ],
     "relationships": [
