@@ -116,6 +116,10 @@ export class Employee extends React.Component<IEmployeeProps, IEmployeeState> {
                       <Translate contentKey="jhipsterSampleApplicationApp.employee.commissionPct">Commission Pct</Translate>{' '}
                       <FontAwesomeIcon icon="sort" />
                     </th>
+                    <th className="hand" onClick={this.sort('isNorm')}>
+                      <Translate contentKey="jhipsterSampleApplicationApp.employee.isNorm">Is Norm</Translate>{' '}
+                      <FontAwesomeIcon icon="sort" />
+                    </th>
                     <th>
                       <Translate contentKey="jhipsterSampleApplicationApp.employee.department">Department</Translate>{' '}
                       <FontAwesomeIcon icon="sort" />
@@ -144,6 +148,7 @@ export class Employee extends React.Component<IEmployeeProps, IEmployeeState> {
                       </td>
                       <td>{employee.salary}</td>
                       <td>{employee.commissionPct}</td>
+                      <td>{employee.isNorm ? 'true' : 'false'}</td>
                       <td>
                         {employee.department ? <Link to={`department/${employee.department.id}`}>{employee.department.id}</Link> : ''}
                       </td>

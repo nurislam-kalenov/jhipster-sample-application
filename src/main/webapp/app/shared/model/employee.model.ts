@@ -12,9 +12,12 @@ export interface IEmployee {
   hireDate?: Moment;
   salary?: number;
   commissionPct?: number;
+  isNorm?: boolean;
   department?: IDepartment;
   jobs?: IJob[];
   manager?: IEmployee;
 }
 
-export const defaultValue: Readonly<IEmployee> = {};
+export const defaultValue: Readonly<IEmployee> = {
+  isNorm: false
+};

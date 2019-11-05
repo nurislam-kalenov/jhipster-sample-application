@@ -74,6 +74,12 @@ export class EmployeeDetail extends React.Component<IEmployeeDetailProps> {
             </dt>
             <dd>{employeeEntity.commissionPct}</dd>
             <dt>
+              <span id="isNorm">
+                <Translate contentKey="jhipsterSampleApplicationApp.employee.isNorm">Is Norm</Translate>
+              </span>
+            </dt>
+            <dd>{employeeEntity.isNorm ? 'true' : 'false'}</dd>
+            <dt>
               <Translate contentKey="jhipsterSampleApplicationApp.employee.department">Department</Translate>
             </dt>
             <dd>{employeeEntity.department ? employeeEntity.department.id : ''}</dd>

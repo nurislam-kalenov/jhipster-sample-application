@@ -36,6 +36,9 @@
             <column name="commission_pct" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="is_norm" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="department_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -73,6 +76,7 @@
             <column name="hire_date" type="datetime"/>
             <column name="salary" type="numeric"/>
             <column name="commission_pct" type="numeric"/>
+            <column name="is_norm" type="boolean"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>
