@@ -23,6 +23,7 @@
       "hireDate": "Hire Date",
       "salary": "Salary",
       "commissionPct": "Commission Pct",
+      "isNorm": "Is Norm",
       "department": "Department",
       "job": "Job",
       "manager": "Manager",

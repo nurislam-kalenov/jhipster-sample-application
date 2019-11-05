@@ -41,7 +41,8 @@ entity Employee {
 	phoneNumber String,
 	hireDate Instant,
 	salary Long,
-	commissionPct Long
+	commissionPct Long,
+    isNorm Boolean
 }
 
 entity Job {

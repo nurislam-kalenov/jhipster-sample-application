@@ -150,6 +150,12 @@ export class EmployeeUpdate extends React.Component<IEmployeeUpdateProps, IEmplo
                   <AvField id="employee-commissionPct" type="string" className="form-control" name="commissionPct" />
                 </AvGroup>
                 <AvGroup>
+                  <Label id="isNormLabel" check>
+                    <AvInput id="employee-isNorm" type="checkbox" className="form-control" name="isNorm" />
+                    <Translate contentKey="jhipsterSampleApplicationApp.employee.isNorm">Is Norm</Translate>
+                  </Label>
+                </AvGroup>
+                <AvGroup>
                   <Label for="employee-department">
                     <Translate contentKey="jhipsterSampleApplicationApp.employee.department">Department</Translate>
                   </Label>
